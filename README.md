@@ -1,116 +1,133 @@
-# 🔐 RSA Encryption & Decryption GUI Tool
+# 🔐 RSA Encryption Tool
 
-A modern Python GUI application that performs RSA encryption and decryption of text and files. It provides a user-friendly interface for securely encoding messages using asymmetric cryptography.
-
----
-
-## 📘 What is RSA?
-
-RSA (Rivest–Shamir–Adleman) is one of the first public-key cryptosystems and is widely used for secure data transmission. Unlike symmetric encryption, RSA uses **two keys**:
-- A **public key** for encryption
-- A **private key** for decryption
-
-RSA is based on the computational difficulty of factoring large prime numbers, making it highly secure when large key sizes are used.
+A simple yet powerful RSA Encryption-Decryption tool built with Python and Tkinter. This project demonstrates how asymmetric encryption works and provides a GUI for secure message and file handling.
 
 ---
 
-## 👨‍🔬 Who Invented RSA?
+## 📌 Project Title
+**Encryption Using RSA Algorithm**
 
-RSA was invented in **1977** by:
-- **Ron Rivest**
-- **Adi Shamir**
-- **Leonard Adleman**
-
-They introduced RSA as a public-key cryptosystem that enables secure communication even over insecure networks.
-
----
-
-## ⚙️ How RSA Works (In Simple Steps)
-
-1. **Key Generation**:
-   - Select two large prime numbers `p` and `q`
-   - Compute `n = p * q`
-   - Calculate Euler’s totient function: `ϕ(n) = (p-1)(q-1)`
-   - Choose an encryption exponent `e` such that `1 < e < ϕ(n)` and `gcd(e, ϕ(n)) = 1`
-   - Compute the decryption exponent `d` such that `(d * e) % ϕ(n) = 1`
-
-2. **Encryption**:
-   - Cipher = (Plaintext<sup>e</sup>) mod n
-
-3. **Decryption**:
-   - Plaintext = (Cipher<sup>d</sup>) mod n
-
-The public key is `(e, n)` and the private key is `(d, n)`.
+## 👨‍💻 Developed By
+**Kolluru Sai Abhiram**  
+**Reg. No.: 23BCE20342**  
+**VIT-AP University**
 
 ---
 
-## 💻 How This Project Works
+## 🎯 Objective
 
-### Core Functionalities
+This project implements the RSA encryption technique using Python. The tool enables:
 
-- 🔐 **Generate Keys**: RSA key pairs are generated and can be saved as `.json`
-- ✍️ **Encrypt Text**: Encrypt any user input or text file using the public key
-- 🔓 **Decrypt Text**: Decrypt RSA-encrypted messages with the private key
-- 💾 **Save & Load Keys**: Store and load key pairs securely
-- 📂 **File Encryption/Decryption**: Supports `.txt` and `.enc` file formats
-- ⚠️ **Error Handling**: Provides alerts for missing or incorrect keys
+- Generation of RSA key pairs (public/private)
+- Encryption and decryption of text
+- File-based encryption and decryption
+- GUI-based interaction for non-programmers
 
 ---
 
-## 🎨 GUI Design
+## 🧰 Requirements
 
-Built using **Python’s `tkinter` and `ttk` libraries**, the interface features:
-- Clean layout with modern styling
-- Separate sections for plaintext, encrypted, and decrypted output
-- Buttons for all key actions
-- Error dialogs and helpful prompts
+- Python 3.8 or higher  
+- pycryptodome
 
----
-
-## 📦 Project Structure
-
+### 📦 Install Dependencies
 ```bash
-rsa-encryption-gui/
-│
-├── rsa_gui.py         # Main GUI Application
-├── rsa_core.py        # Encryption, decryption, and key logic
-├── rsa_keys.json      # Sample RSA key file (generated on save)
-├── TEST1.txt          # Sample input file for testing
-└── README.md          # Project documentation
+pip install pycryptodome
 ```
 
-## 🧪 Features in Action
-Generate RSA key pair
+---
 
-Enter text to encrypt
+## 🛠️ How to Run
 
-Click Encrypt to view the encrypted message
+### 🔗 Step 1: Clone the Repository
+```bash
+git clone https://github.com/abhiram342-vit/RSA-ENCRYPTION
+cd RSA-ENCRYPTION
+```
 
-Click Decrypt to restore the original message
-
-Use File Encrypt/Decrypt for .txt and .enc files
-
-Save and load keys for reuse
+### ▶️ Step 2: Run the GUI
+```bash
+python rsa_gui.py
+```
 
 ---
 
-## 🔒 Security Note
-Always protect your private key
+## 💡 Features
 
-Use longer key sizes (1024+ bits) for real-world applications
-
-This project is educational — for serious applications, use established libraries like cryptography or PyCryptodome
-
----
-
-## 📜 License
-This project is licensed under the MIT License – free to use and modify.
+- 🔐 RSA Key Pair Generation (512-bit for demo)
+- 📝 Text Encryption & Decryption
+- 📂 File Encryption & Decryption (`.txt` ⇄ `.enc`)
+- 💾 Save and Load Key files
+- 🧼 Clear interface with a modern layout
 
 ---
 
-## 👨‍💻 Author
-K. Sai Abhiram,
-Undergrad Student,
-VIT-AP University.
+## 🖼️ GUI Overview
 
-## 🚀 Empower your messages with RSA — because real security starts with smart encryption. 🔐
+- **Generate Keys** → Creates RSA key pair  
+- **Save Keys** → Stores keys in `rsa_keys.json`  
+- **Load Keys** → Loads saved keys  
+- **Encrypt** → Encrypts the message  
+- **Decrypt** → Decrypts the cipher  
+- **Encrypt File** → Encrypts a `.txt` file  
+- **Decrypt File** → Decrypts a `.enc` file  
+- **Clear All** → Resets all input/output areas  
+
+---
+
+## 🔐 Manual Test (CLI)
+
+Try this from Python shell:
+
+```python
+from rsa_core import generate_keys, encrypt, decrypt
+
+pub, priv = generate_keys()
+cipher = encrypt("Hello RSA", pub)
+print("Encrypted:", cipher)
+print("Decrypted:", decrypt(cipher, priv))
+```
+
+---
+
+## ⚠️ Security Note
+
+> This tool uses 512-bit RSA keys for demonstration.  
+> For real-world use, RSA key sizes of **2048 bits or higher** are recommended.
+
+---
+
+## 📁 Project Structure
+
+```
+RSA-ENCRYPTION/
+├── rsa_core.py           # Core RSA logic
+├── rsa_gui.py            # Tkinter GUI interface
+├── rsa_keys.json         # Sample key file (after saving)
+├── README.md             # This file
+├── project_documentation.pdf  # Detailed report
+```
+
+---
+
+## 🌐 GitHub Repository
+
+🔗 [https://github.com/abhiram342-vit/RSA-ENCRYPTION](https://github.com/abhiram342-vit/RSA-ENCRYPTION)
+
+---
+
+## ✅ Final Output
+
+> A user-friendly RSA GUI that allows secure encryption and decryption of text and files.
+
+---
+
+## 👨‍🎓 Student Info
+
+**Name:** Kolluru Sai Abhiram  
+**Reg. No.:** 23BCE20342  
+**University:** VIT-AP University
+
+---
+
+## 🙏 Thank You
