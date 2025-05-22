@@ -2,7 +2,6 @@
 
 A simple yet powerful RSA Encryption-Decryption tool built with Python and Tkinter. This project demonstrates how asymmetric encryption works and provides a GUI for secure message and file handling.
 
----
 
 ## 📌 Project Title
 **Encryption Using RSA Algorithm**
@@ -12,7 +11,6 @@ A simple yet powerful RSA Encryption-Decryption tool built with Python and Tkint
 **Reg. No.: 23BCE20342**  
 **VIT-AP University**
 
----
 
 ## 🎯 Objective
 
@@ -23,7 +21,6 @@ This project implements the RSA encryption technique using Python. The tool enab
 - File-based encryption and decryption
 - GUI-based interaction for non-programmers
 
----
 
 ## 🧰 Requirements
 
@@ -35,7 +32,6 @@ This project implements the RSA encryption technique using Python. The tool enab
 pip install pycryptodome
 ```
 
----
 
 ## 🛠️ How to Run
 
@@ -50,7 +46,6 @@ cd RSA-ENCRYPTION
 python rsa_gui.py
 ```
 
----
 
 ## 💡 Features
 
@@ -60,7 +55,6 @@ python rsa_gui.py
 - 💾 Save and Load Key files
 - 🧼 Clear interface with a modern layout
 
----
 
 ## 🖼️ GUI Overview
 
@@ -73,7 +67,6 @@ python rsa_gui.py
 - **Decrypt File** → Decrypts a `.enc` file  
 - **Clear All** → Resets all input/output areas  
 
----
 
 ## 🔐 Manual Test (CLI)
 
@@ -88,14 +81,12 @@ print("Encrypted:", cipher)
 print("Decrypted:", decrypt(cipher, priv))
 ```
 
----
 
 ## ⚠️ Security Note
 
 > This tool uses 512-bit RSA keys for demonstration.  
 > For real-world use, RSA key sizes of **2048 bits or higher** are recommended.
 
----
 
 ## 📁 Project Structure
 
@@ -108,19 +99,15 @@ RSA-ENCRYPTION/
 ├── project_documentation.pdf  # Detailed report
 ```
 
----
 
 ## 🌐 GitHub Repository
 
 🔗 [https://github.com/abhiram342-vit/RSA-ENCRYPTION](https://github.com/abhiram342-vit/RSA-ENCRYPTION)
 
----
 
 ## ✅ Final Output
 
 > A user-friendly RSA GUI that allows secure encryption and decryption of text and files.
-
----
 
 ## 👨‍🎓 Student Info
 
@@ -128,6 +115,5 @@ RSA-ENCRYPTION/
 **Reg. No.:** 23BCE20342  
 **University:** VIT-AP University
 
----
 
 ## 🙏 Thank You
